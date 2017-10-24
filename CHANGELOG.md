@@ -1,3 +1,11 @@
+# 1.0.1
+
+This patch release fixes text layout in the AUTHORS file.
+
+## Non-source changes
+
+* [Wrap AUTHORS file by 80 chars.](https://github.com/material-foundation/bazel_ios_warnings/commit/bd6781bcd4287a48c71265d5502da4e5e336994e) (Jeff Verkoeyen)
+
 # 1.0.0
 
 This initial release includes a set of strict warnings for Objective-C projects.
