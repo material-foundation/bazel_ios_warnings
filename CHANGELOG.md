@@ -1,3 +1,8 @@
+# #develop#
+
+ TODO: Enumerate changes.
+
+
 # 1.0.0
 
 This initial release includes a set of strict warnings for Objective-C projects.
