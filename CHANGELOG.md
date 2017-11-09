@@ -1,3 +1,11 @@
+# 2.0.0
+
+Added additional warnings to `strict_warnings_objc_library`:
+
+## Changes
+
+* [Update warnings to match the MDC iOS project (#2)](https://github.com/material-foundation/bazel_ios_warnings/commit/aac7e59ab1b3e6d3329a08019b69ace1a68966b2) (featherless)
+
 # 1.0.1
 
 This patch release fixes text layout in the AUTHORS file.
