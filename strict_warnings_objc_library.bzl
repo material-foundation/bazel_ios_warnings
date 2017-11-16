@@ -17,7 +17,7 @@ BASIC_WARNINGS = ["-Wall", "-Wextra", "-Werror"]
 EXTRA_WARNINGS = [
     "-Wcast-align", "-Wconversion", "-Watomic-properties",
     "-Wmissing-prototypes", "-Wnewline-eof", "-Woverlength-strings",
-    "-Wshadow-all", "-Wstrict-selector-match", "-Wundeclared-selector",
+    "-Wshadow", "-Wstrict-selector-match", "-Wundeclared-selector",
     "-Wunreachable-code", "-Wstrict-prototypes"
 ]
 IGNORABLE_WARNINGS = [
