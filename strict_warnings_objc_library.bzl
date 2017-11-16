@@ -1,45 +1,32 @@
 """Macros for building Objective-C libraries with strict warnings."""
 
-# This list is derived from
-# http://programmers.stackexchange.com/questions/122608/clang-warning-flags-for-objective-c-development
-# with a few turned off because the warning code is widely present in Material
-# Components and seems innocuous.
-COMMON_COPTS = [
-    "-Wall",  # Standard known-to-be-bugs warnings.
-    "-Wcast-align",  # Casting a pointer such that alignment is broken.
-    "-Wconversion",  # Numeric conversion warnings.
-    "-Wdocumentation",  # Documentation checks.
-    "-Werror",  # All warnings as errors.
-    "-Wextra",  # Many useful extra warnings.
-    "-Wdocumentation",  # Warn when documentation is out of date.
-    "-Wimplicit-atomic-properties",  # Dynamic properties should be non-atomic.
-    "-Wmissing-prototypes",  # Global function is defined without a previous prototype.
-    "-Wnewline-eof",  # No newline at the end of the file.
-    "-Wno-error=deprecated",  # Deprecation warnings are never errors.
-    "-Wno-error=deprecated-implementations",  # Deprecation warnings are never errors.
-    "-Wno-partial-availability",
-    "-Wno-sign-conversion",  # Do not warn on sign conversions.
-    "-Wno-unused-parameter",  # Do not warn on unused parameters.
-    "-Woverlength-strings",  # Strings longer than the C maximum.
-    "-Wshadow",  # Local variable shadows another variable, parameter, etc.
-    "-Wstrict-selector-match",  # Compiler can't figure out the right selector.
-    "-Wstrict-prototypes",
-    "-Wundeclared-selector",  # Compiler doesn't see a selector.
-    "-Wunreachable-code",  # Code will never be reached.
-    "-Wunused-comparison",
-    "-Wunused-const-variable",
-    "-Wunused-exception-parameter",
-    "-Wunused-function",
-    "-Wunused-label",
-    "-Wunused-member-function",
-    "-Wunused-private-field",
-    "-Wunused-property-ivar",
-    "-Wunused-result",
-    "-Wunused-value",
-    "-Wunused-variable",
-    "-Wunused-volatile-lvalue",
-    "-Wused-but-marked-unused",
+# Warning flags to be used for all library and example code.
+#
+# Clang's warning reference: https://clang.llvm.org/docs/DiagnosticsReference.html
+# General xcconfig docs: https://pewpewthespells.com/blog/xcconfig_guide.html
+#
+# * Our basic warnings cover most things and make warnings into errors.
+# * If a warning is (transitively) enabled by our basic warnings, do not include it separately.
+# * For warnings not enabled by our basic warnings, add them to the extra warnings.
+# * To change a warning-as-error into just a warning, add it to the ignorable warnings using the
+#   format `-Wno-error=<warning>`.
+# * To disable a warning completely, add it to the disabled warnings using the format
+#   `-Wno-<warning>`.
+#
+BASIC_WARNINGS = ["-Wall", "-Wextra", "-Werror"]
+EXTRA_WARNINGS = [
+    "-Wcast-align", "-Wconversion", "-Watomic-properties",
+    "-Wmissing-prototypes", "-Wnewline-eof", "-Woverlength-strings",
+    "-Wshadow", "-Wstrict-selector-match", "-Wundeclared-selector",
+    "-Wunreachable-code", "-Wstrict-prototypes"
 ]
+IGNORABLE_WARNINGS = [
+    "-Wno-error=deprecated", "-Wno-error=deprecated-implementations"
+]
+DISABLED_WARNINGS = [
+    "-Wno-partial-availability", "-Wno-sign-conversion", "-Wno-unused-parameter"
+]
+COMMON_COPTS = BASIC_WARNINGS + EXTRA_WARNINGS + IGNORABLE_WARNINGS + DISABLED_WARNINGS
 
 def strict_warnings_objc_library(
     name,
