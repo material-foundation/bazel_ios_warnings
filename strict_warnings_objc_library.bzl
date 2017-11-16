@@ -8,8 +8,10 @@
 # * Our basic warnings cover most things and make warnings into errors.
 # * If a warning is (transitively) enabled by our basic warnings, do not include it separately.
 # * For warnings not enabled by our basic warnings, add them to the extra warnings.
-# * To change a warning-as-error into just a warning, add it to the ignorable warnings.
-# * To disable a warning completely, add it to the disabled warnings.
+# * To change a warning-as-error into just a warning, add it to the ignorable warnings using the
+#   format `-Wno-error=<warning>`.
+# * To disable a warning completely, add it to the disabled warnings using the format
+#   `-Wno-<warning>`.
 #
 BASIC_WARNINGS = ["-Wall", "-Wextra", "-Werror"]
 EXTRA_WARNINGS = [
