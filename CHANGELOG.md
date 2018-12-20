@@ -1,7 +1,7 @@
-# #develop#
+# 3.0.0
 
- TODO: Enumerate changes.
-
+`unused-parameter` has been disabled because it can cause release builds to fail to build when
+using debug-only assertions to check parameters.
 
 # 2.0.0
 
