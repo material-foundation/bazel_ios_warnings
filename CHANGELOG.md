@@ -1,3 +1,8 @@
+# 3.0.0
+
+`unused-parameter` has been disabled because it can cause release builds to fail to build when
+using debug-only assertions to check parameters.
+
 # 2.0.0
 
 Added additional warnings to `strict_warnings_objc_library`:

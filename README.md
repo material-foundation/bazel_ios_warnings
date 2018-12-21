@@ -9,7 +9,7 @@ Add the following to your `WORKSPACE`:
 git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
-    tag = "v2.0.0",
+    tag = "v3.0.0",
 )
 ```
 

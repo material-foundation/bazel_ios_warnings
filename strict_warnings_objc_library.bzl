@@ -39,6 +39,7 @@ COMMON_COPTS = [
     "-Wunused-variable",
     "-Wunused-volatile-lvalue",
     "-Wused-but-marked-unused",
+    "-Wno-unused-parameter",  # Enabled by -Wall via -Wunused, problems with params used in asserts.
 ]
 
 def strict_warnings_objc_library(
