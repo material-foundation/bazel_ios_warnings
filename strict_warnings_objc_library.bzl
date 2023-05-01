@@ -14,7 +14,6 @@ COMMON_COPTS = [
     "-Wdocumentation",  # Warn when documentation is out of date.
     "-Wimplicit-atomic-properties",  # Dynamic properties should be non-atomic.
     "-Wmissing-prototypes",  # Global function is defined without a previous prototype.
-    "-Wnewline-eof",  # No newline at the end of the file.
     "-Wno-error=deprecated",  # Deprecation warnings are never errors.
     "-Wno-error=deprecated-implementations",  # Deprecation warnings are never errors.
     "-Wno-partial-availability",
